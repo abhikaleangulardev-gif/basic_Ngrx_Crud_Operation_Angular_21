@@ -1,1 +1,21 @@
-<p>student works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8">
+      <div class="card">
+        <div class="card-header">
+          <h4 class="text-primary">crud operation</h4>
+        </div>
+         <div class="card-body">
+            <button class="btn btn-success btn-sm" (click)="addStudent()">Add Student</button>
+            <hr>
+            @for (student of (student$ | async) ?? []; track student.id) {
+              <div>{{ student.name }} - {{ student.marks }}</div>
+              <button class="btn btn-danger btn-sm" (click)="deleteStudent(student.id)">Deelete Student</button>
+            }
+
+
+         </div>
+      </div>
+    </div>
+  </div>
+</div>
