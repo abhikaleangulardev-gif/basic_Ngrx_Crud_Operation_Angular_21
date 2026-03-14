@@ -1,12 +1,12 @@
 import { createAction, props } from "@ngrx/store";
-import { Student } from "../component/student/student";
+import { Student } from "./student.model";
 
 
 // add student action
 
 export const addStudent = createAction(
     '[Student] Add Student',
-    props<{ Student: Student }>()
+    props<{ student: Student }>()
 );
 
 //  Delete Student action
@@ -20,5 +20,5 @@ export const deleteStudent = createAction(
 
 export const updateStudent = createAction(
     '[Student] Update Student',
-    props<{ Student: Student }>()
+    props<{ student: Student }>()
 );
